@@ -14,16 +14,9 @@ O = {
     "12": "1100",
     "13": "1101",
     "14": "1110",
-    "15": "1111"
+    "15": "1111",
 }
-O1 = {
-    "10": "A",
-    "11":"B",
-    "12":"C",
-    "13":"D",
-    "14":"E",
-    "15": "F"
-}
+O1 = {"10": "A", "11": "B", "12": "C", "13": "D", "14": "E", "15": "F"}
 
 
 def OctalToBinary():
@@ -36,7 +29,7 @@ def OctalToBinary():
 
     for i in range(len(octal)):
         for index in range(8):
-            if octal[i]== str(index):
+            if octal[i] == str(index):
                 binary.append(O[str(index)][1:])
 
     for i in binary:
@@ -71,19 +64,19 @@ def HexadecimalToBinary():
         hexa.append(letter.upper())
     for i in range(len(hexa)):
         for index in range(16):
-            if hexa[i]== str(index):
+            if hexa[i] == str(index):
                 binary.append(O[str(index)])
                 break
             if hexa[i] not in O:
-                for index_ in range(1,6):
-                 if hexa[i] == O1[str(9+index_)]:
-                    binary.append(O[str(9+index_)])
+                for index_ in range(1, 6):
+                    if hexa[i] == O1[str(9 + index_)]:
+                        binary.append(O[str(9 + index_)])
                 break
-          
-              
+
     for i in binary:
         bin += i
     print("Your Binary Number is:", bin)
+
 
 def BinaryToHexadecimal():
     bin = input("Enter your Binary No: ")
@@ -91,19 +84,17 @@ def BinaryToHexadecimal():
     hexa = []
     hexadecimal = ""
     for i in range(0, len(bin), 4):
-        bin_arr.append(bin[i:i+4])
+        bin_arr.append(bin[i : i + 4])
     for i in range(len(bin_arr)):
         for index in range(16):
-         if bin_arr[i] == O[str(index)]:
-             if index>9:
-                 hexa.append(O1[str(index)])
-             else: hexa.append(str(index))
+            if bin_arr[i] == O[str(index)]:
+                if index > 9:
+                    hexa.append(O1[str(index)])
+                else:
+                    hexa.append(str(index))
     for i in hexa:
-        hexadecimal += i     
-    print("Your Hexadecimal Number is:",hexadecimal)  
-      
-
-
+        hexadecimal += i
+    print("Your Hexadecimal Number is:", hexadecimal)
 
 
 def BinarytoDecimal():
